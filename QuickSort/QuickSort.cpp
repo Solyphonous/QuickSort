@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 
 	vector<int> values = parse_csv(contents);
 
-	quick_sort(values, 0, values.size()-1);
+	quick_sort(values, 0, values.size() - 1);
 
 	for (int i = 0; i < values.size(); i++) {
 		cout << values[i] << ',';
