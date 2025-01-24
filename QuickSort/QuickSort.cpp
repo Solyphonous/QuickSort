@@ -64,16 +64,26 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 
+	cout << "Started reading file contents" << endl;
+
 	string contents;
 	file >> contents;
 
 	vector<int> values = parse_csv(contents);
 
+	cout << "Started sorting" << endl;
+
 	quick_sort(values, 0, values.size() - 1);
 
+	cout << "Sorted all values" << endl;
+
+	ofstream output("output.csv");
+
 	for (int i = 0; i < values.size(); i++) {
-		cout << values[i] << ',';
+		output << values[i] << ',';
 	}
+
+	cout << "Saved output to file" << endl;
 
 	return 0;
 }
